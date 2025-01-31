@@ -1,5 +1,6 @@
+python==3.8
 altair==5.5.0
-anyio @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_68kdsx8iyd/croot/anyio_1729121281958/work
+anyio==3.7.0
 appnope @ file:///Users/ktietz/demo/mc3/conda-bld/appnope_1629146036738/work
 archspec @ file:///croot/archspec_1709217642129/work
 argon2-cffi @ file:///opt/conda/conda-bld/argon2-cffi_1645000214183/work
