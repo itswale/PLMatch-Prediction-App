@@ -144,55 +144,19 @@ def display_predictions(fixtures_df, past_results_df):
 def main():
     st.set_page_config(page_title="Premier League Match Prediction", page_icon="⚽", layout="wide")
     
-    # Custom CSS for better styling
+    # Custom CSS for mobile responsiveness
     st.markdown(
         """
         <style>
-        /* General Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #1E1E2C; /* Dark background */
-            color: #FFFFFF; /* White text */
-        }
-        h1, h2, h3 {
-            color: #F29F67; /* Primary color for headings */
-        }
-        p {
-            color: #FFFFFF; /* White text */
-        }
-        .stButton button {
-            background-color: #3B8FF3; /* Supporting color for buttons */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .stButton button:hover {
-            background-color: #34B1AA; /* Supporting color for button hover */
-        }
-        .stDataFrame {
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        /* Card Styling */
-        .card {
-            padding: 20px;
-            background-color: #1E1E2C; /* Dark background */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card h3 {
-            color: #F29F67; /* Primary color for card headings */
-        }
-        .card p {
-            color: #FFFFFF; /* White text */
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .stButton button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .stDataFrame {
+                font-size: 14px;
+            }
         }
         </style>
         """,
@@ -203,8 +167,8 @@ def main():
     st.markdown(
         """
         <div style="text-align: center;">
-            <h1 style="color: #F29F67;">Premier League Match Prediction 🏆</h1>
-            <p style="color: #FFFFFF; font-size: 18px;">
+            <h1>Premier League Match Prediction 🏆</h1>
+            <p style="font-size: 18px;">
             Explore the latest Premier League data and predictions. Choose a section below to get started!
             </p>
         </div>
@@ -226,7 +190,7 @@ def main():
     with col1:
         st.markdown(
             f"""
-            <div class="card">
+            <div>
                 <h3>📅 Upcoming Matches</h3>
                 <p>{len(fixtures_df) if fixtures_df is not None else 0} matches scheduled</p>
             </div>
@@ -239,7 +203,7 @@ def main():
     with col2:
         st.markdown(
             f"""
-            <div class="card">
+            <div>
                 <h3>📜 Past Results</h3>
                 <p>{len(past_results_df) if past_results_df is not None else 0} results available</p>
             </div>
@@ -252,7 +216,7 @@ def main():
     with col3:
         st.markdown(
             f"""
-            <div class="card">
+            <div>
                 <h3>🔮 Predictions</h3>
                 <p>{len(fixtures_df) if fixtures_df is not None else 0} matches to predict</p>
             </div>
